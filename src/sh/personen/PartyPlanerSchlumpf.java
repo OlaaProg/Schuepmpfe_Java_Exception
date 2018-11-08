@@ -23,7 +23,13 @@ public class PartyPlanerSchlumpf extends Schlumpf {
 	public void partyPlan() throws NichtEingeladenException{
 		Einladung einladen = new Einladung();
 		for(Schlumpf gast: gaeste) {
+			try {
 				einladen.einladen(gast);
+
+			}catch(NichtEingeladenException e) {
+				System.out.println("Gefangen... " );
+				System.out.println("Folgendes ist passiert: " + e);				
+			}
 		}
 		System.out.println("Jetzt kann die party losgehen");
 	
