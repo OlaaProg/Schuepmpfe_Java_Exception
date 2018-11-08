@@ -2,6 +2,7 @@ package sh.personen;
 
 import sh.personen.Schlumpf;
 import sh.planen.Einladung;
+import sh.planen.NichtEingeladenException;
 
 public class PartyPlanerSchlumpf extends Schlumpf {
 	
@@ -19,10 +20,10 @@ public class PartyPlanerSchlumpf extends Schlumpf {
 		gaeste[7] = new Schlumpf("Codi, der Java Programmierer");
 		gaeste[8] = new Schlumpf("Azrael");
 	}
-	public void partyPlan() {
-		Einladung ernteDank = new Einladung();
+	public void partyPlan() throws NichtEingeladenException{
+		Einladung einladen = new Einladung();
 		for(Schlumpf gast: gaeste) {
-				ernteDank.einladen(gast);
+				einladen.einladen(gast);
 		}
 		System.out.println("Jetzt kann die party losgehen");
 	
